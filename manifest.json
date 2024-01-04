@@ -3,7 +3,7 @@
   "name": "URL in Title",
   "version": "1.0",
 
-  "description": "Add the current tab's url to its title with the click of a button.",
+  "description": "Add the current tab's URL to its title with the click of a button.",
   "homepage_url": "https://github.com/max-leontiev/tab-renamer",
   "permissions": ["activeTab", "scripting"],
   "icons": {
