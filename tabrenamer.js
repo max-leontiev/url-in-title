@@ -1,8 +1,25 @@
-async function changeTitle() { // update extension action tooltip if tab title contains the URL already
-  activeTab = (await browser.tabs.query({active: true, lastFocusedWindow: true}))[0]
-  if (activeTab.title.endsWith(" - " + activeTab.url)) {
-    browser.action.setTitle({title: "Tab title contains URL", tabId: activeTab.id})
+async function queryActiveTabs() {
+  return browser.tabs.query({active: true, lastFocusedWindow: true})
+}
+
+async function updateActionTooltip() { // update extension action tooltip if tab title contains the URL already
+  tab = (await queryActiveTabs())[0]
+  if (tab.title.endsWith(" - " + tab.url)) {
+    browser.action.setTitle({title: "Tab title contains URL", tabId: tab.id})
   }
+}
+
+async function addURLtoTabTitle(tab) {
+  await browser.scripting.executeScript({
+    target: {
+      tabId: tab.id,
+    },
+    func: () => {
+      if (!document.title.endsWith(" - " + window.location.href)) {
+        document.title += " - " + window.location.href
+      }
+    }
+  }).then(updateActionTooltip) // update extension action tooltip to reflect current state
 }
 
 if (window.matchMedia('(prefers-color-scheme: dark').matches) { // color icon based on color scheme preference
@@ -17,15 +34,4 @@ if (window.matchMedia('(prefers-color-scheme: dark').matches) { // color icon ba
   })
 }
 
-browser.action.onClicked.addListener(async () => { // when extension action is clicked, append URL to tab title if it isn't already there
-  browser.scripting.executeScript({
-    target: {
-      tabId: (await browser.tabs.query({active: true, lastFocusedWindow: true}))[0].id,
-    },
-    func: () => {
-      if (!document.title.endsWith(" - " + window.location.href)) {
-        document.title += " - " + window.location.href
-      }
-    }
-  }).then(changeTitle) // update extension action tooltip to reflect current state
-})
+browser.action.onClicked.addListener(addURLtoTabTitle) // when extension action is clicked, append URL to tab title if it isn't already there
