@@ -24,14 +24,13 @@ async function addURLtoTabTitle(tab) {
 
 if (window.matchMedia('(prefers-color-scheme: dark').matches) { // color icon based on color scheme preference
   browser.action.setIcon({
-    path: {
-      16: 'icons/iconwhite.svg',
-      32: 'icons/iconwhite.svg',
-      48: 'icons/iconwhite.svg',
-      64: 'icons/iconwhite.svg',
-      96: 'icons/iconwhite.svg'
-    }
+    path: 'icons/iconwhite.svg'
   })
 }
 
 browser.action.onClicked.addListener(addURLtoTabTitle) // when extension action is clicked, append URL to tab title if it isn't already there
+browser.commands.onCommand.addListener(async (command) => { // when keyboard shortcut is activated
+  if (command === "add-url-to-title") {
+    addURLtoTabTitle((await queryActiveTabs())[0])
+  }
+});
