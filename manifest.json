@@ -15,7 +15,7 @@
   },
   "action": {
     "default_icon": "icons/icon.svg",
-    "default_title": "Tab title lacks URL"
+    "default_title": "Add URL to title"
   },
   "background": {
     "scripts": ["url-in-title.js"]
