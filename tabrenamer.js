@@ -1,13 +1,11 @@
-async function changeTitle() {
+async function changeTitle() { // update extension action tooltip if tab title contains the URL already
   activeTab = (await browser.tabs.query({active: true, lastFocusedWindow: true}))[0]
   if (activeTab.title.endsWith(" - " + activeTab.url)) {
     browser.action.setTitle({title: "Tab title contains URL", tabId: activeTab.id})
   }
 }
 
-// th = async () => (await browser.theme.getCurrent())
-// browser.theme.getCurrent().then(console.log)
-if (window.matchMedia('(prefers-color-scheme: dark').matches) {
+if (window.matchMedia('(prefers-color-scheme: dark').matches) { // color icon based on color scheme preference
   browser.action.setIcon({
     path: {
       16: 'icons/iconwhite.svg',
@@ -17,10 +15,9 @@ if (window.matchMedia('(prefers-color-scheme: dark').matches) {
       96: 'icons/iconwhite.svg'
     }
   })
-  console.log("prefers dark")
 }
 
-browser.action.onClicked.addListener(async () => {
+browser.action.onClicked.addListener(async () => { // when extension action is clicked, append URL to tab title if it isn't already there
   browser.scripting.executeScript({
     target: {
       tabId: (await browser.tabs.query({active: true, lastFocusedWindow: true}))[0].id,
@@ -30,5 +27,5 @@ browser.action.onClicked.addListener(async () => {
         document.title += " - " + window.location.href
       }
     }
-  }).then(changeTitle)
+  }).then(changeTitle) // update extension action tooltip to reflect current state
 })
