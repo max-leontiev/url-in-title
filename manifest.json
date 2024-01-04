@@ -4,7 +4,7 @@
   "version": "1.0",
 
   "description": "Add the current tab's URL to its title with the click of a button.",
-  "homepage_url": "https://github.com/max-leontiev/tab-renamer",
+  "homepage_url": "https://github.com/max-leontiev/url-in-title",
   "permissions": ["activeTab", "scripting"],
   "icons": {
     "16": "icons/icon.svg",
@@ -24,7 +24,7 @@
     "default_title": "Tab title lacks URL"
   },
   "background": {
-    "scripts": ["tabrenamer.js"]
+    "scripts": ["url-in-title.js"]
   }
 }
 
