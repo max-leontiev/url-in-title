@@ -30,7 +30,7 @@ if (window.matchMedia('(prefers-color-scheme: dark').matches) { // color icon ba
 
 browser.action.onClicked.addListener(addURLtoTabTitle) // when extension action is clicked, append URL to tab title if it isn't already there
 browser.commands.onCommand.addListener(async (command) => { // when keyboard shortcut is activated
-  if (command === "add-url-to-title") {
+  if (command === "Add URL to title") {
     addURLtoTabTitle((await queryActiveTabs())[0])
   }
 });

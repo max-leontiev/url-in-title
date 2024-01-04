@@ -21,7 +21,7 @@
     "scripts": ["url-in-title.js"]
   },
   "commands": {
-    "add-url-to-title": {
+    "Add URL to title": {
       "suggested_key": {
         "default": "Ctrl+Alt+S"
       }
