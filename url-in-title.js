@@ -18,12 +18,6 @@ async function addURLtoTitle(tab) { // executes script on the specified tab
   })
 }
 
-if (window.matchMedia('(prefers-color-scheme: dark').matches) { // color icon based on color scheme preference
-  browser.action.setIcon({
-    path: 'icons/iconwhite.svg'
-  })
-}
-
 browser.action.onClicked.addListener(addURLtoTitle) // when toolbar button (AKA extension action) is clicked, append URL to title
 browser.commands.onCommand.addListener(async (command) => { // when keyboard shortcut is used, append URL to title
   if (command === "Add URL to title") {
