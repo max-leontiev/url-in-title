@@ -48,4 +48,5 @@ These were my reasons, in order of importance:
 
 ## License
 
-This project is licensed under the GPLv3 License - see the LICENSE.txt file for details.
+This project is licensed under the GPLv3 License - see the [LICENSE.txt](LICENSE.txt) file for details.\
+Copyright © 2023 Max Leontiev
