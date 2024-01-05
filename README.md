@@ -19,7 +19,7 @@ Specifically, how I use this extension is:
 
 Unlike other similar extensions (see [Alternatives](#alternatives)), this extension will **not** ask to *Access your data for all websites*. In fact, you will not be prompted for any permissions at all, since this extension gets access to the current tab **only** when you interact with it (see [Usage](#usage)).
 
-Under the hood, this extension uses the `activeTab` and `scripting` permissions (see the [manifest](manifest.json)). `activeTab` is needed so that, when you interact with the extension, it gets permission to run a script on it (using the   `scripting` permission). This script adds the URL to the tab title, and removes it after a 1-second timeout (see [url-in-title.js](url-in-title.js)).
+Under the hood, this extension uses the `activeTab` and `scripting` permissions (see the [manifest](manifest.json)). `activeTab` is needed so that, when you interact with the extension, it gets permission to run a script on the active tab (using the `scripting` permission). This script adds the URL to the tab title, and removes it after a 1-second timeout (see [url-in-title.js](url-in-title.js)).
 
 As stated in the [Request the Right Permissions](https://extensionworkshop.com/documentation/develop/request-the-right-permissions/) article in Mozilla's docs, extension developers should avoid requesting the `tabs` permission and host permissions for `<all_urls>`. However, almost all of the other URL in title extensions do this - in fact, 4 out of 5 of the most popular [alternatives](#alternatives) listed below need host permissions for `<all_urls>`, which is what causes the scary *Access your data for all websites* warning.
 
@@ -36,7 +36,7 @@ There are dozens (hundreds?) of extensions available that do everything this ext
 Out of all of the alternative extensions above, I would be most inclined to use [KeePass Helper - URL in title](https://addons.mozilla.org/en-CA/firefox/addon/keepass-helper-url-in-title/) by [pbanasiak](https://addons.mozilla.org/en-CA/firefox/user/1894772/), since it does not request host permissions for `<all_urls>` (see [Permissions](#permissions) for more info). However, it still requests the `tabs` permission, which is unnecessary for my use case. Also, although the extension uses the [MPL 2.0](http://www.mozilla.org/MPL/2.0/) open-source license, the author does not link to the source code. I don't like this because it means I'd have to install the extension to look at the code.
 
 ## Why another URL in title extension?
-If there are so many alternatives, why does this extension exist?\
+If there are so many alternatives, why did I create this extension?\
 These were my reasons, in order of importance:
 
 1. Other URL in title extensions ask for excessive permissions - namely, host permissions for `<all_urls>` (which shows up in Firefox as *Access your data for all websites*). I do not like this, even though I can look at the source code and see that nothing untoward is going on. This also goes against the best practices layed out by Mozilla in their [Request the Right Permissions](https://extensionworkshop.com/documentation/develop/request-the-right-permissions/) article. See the [Permissions](#permissions) section for a more thorough discussion.
