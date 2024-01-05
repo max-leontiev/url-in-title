@@ -1,5 +1,5 @@
 # URL in Title
-A simple extension which lets you add the URL of the active tab to its title temporarily. The URL is removed from the title after 1 second.
+A simple extension which lets you add the URL of the active tab to its title temporarily. The URL is removed from the title after 10 seconds.
 
 ## Usage
 To add the URL to the active tab's title, you can either:
@@ -7,7 +7,7 @@ To add the URL to the active tab's title, you can either:
 - Use the URL in Title keyboard shortcut (`Ctrl` + `Alt` + `S` by default).\
 This shortcut can be customized - see https://support.mozilla.org/en-US/kb/manage-extension-shortcuts-firefox
 
-After 1 second, the URL is will be automatically removed from the tab's title.
+After 10 seconds, the URL will be automatically removed from the tab's title.
 
 I designed this extension for use with the [AutoType feature](https://keepass.info/help/base/autotype.html) of the KeePass password manager.\
 Specifically, how I use this extension is:

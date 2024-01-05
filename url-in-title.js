@@ -17,11 +17,11 @@ function addAndRemoveURL() {
   if (!document.title.endsWith(" - " + window.location.href)) { // append URL to title if it isn't there already
     document.title += " - " + window.location.href
   }
-  setTimeout(() => { // remove URL from title after 1 second
+  setTimeout(() => { // remove URL from title after 10 seconds
     if (document.title.endsWith(" - " + window.location.href)) { 
       document.title = document.title.slice(0, -(" - ".concat(window.location.href).length))
     }
-  }, 1000)
+  }, 10000)
 }
 
 async function addURLtoTitle(tab) { // executes script on the specified tab
