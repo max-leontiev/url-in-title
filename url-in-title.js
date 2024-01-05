@@ -9,7 +9,7 @@ function addAndRemoveURL() {
   }, 1000)
 }
 
-async function addURLtoTitle(tab) {
+async function addURLtoTitle(tab) { // executes script on the specified tab
   await browser.scripting.executeScript({
     target: {
       tabId: tab.id,
@@ -24,8 +24,8 @@ if (window.matchMedia('(prefers-color-scheme: dark').matches) { // color icon ba
   })
 }
 
-browser.action.onClicked.addListener(addURLtoTitle) // when extension action is clicked, append URL to tab title if it isn't already there
-browser.commands.onCommand.addListener(async (command) => { // when keyboard shortcut is activated
+browser.action.onClicked.addListener(addURLtoTitle) // when toolbar button (AKA extension action) is clicked, append URL to title
+browser.commands.onCommand.addListener(async (command) => { // when keyboard shortcut is used, append URL to title
   if (command === "Add URL to title") {
     addURLtoTitle((await browser.tabs.query({active: true, lastFocusedWindow: true}))[0])
   }
