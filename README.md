@@ -35,6 +35,17 @@ There are dozens (hundreds?) of extensions available that do everything this ext
 
 Out of all of the alternative extensions above, I would be most inclined to use [KeePass Helper - URL in title](https://addons.mozilla.org/en-CA/firefox/addon/keepass-helper-url-in-title/) by [pbanasiak](https://addons.mozilla.org/en-CA/firefox/user/1894772/), since it does not request host permissions for `<all_urls>` (see [Permissions](#permissions) for more info). However, it still requests the `tabs` permission, which is unnecessary for my use case. Also, although the extension uses the [MPL 2.0](http://www.mozilla.org/MPL/2.0/) open-source license, the author does not link to the source code. I don't like this because it means I'd have to install the extension to look at the code.
 
+## Another alternative: a bookmarklet
+
+Here is a bookmarklet that provides similar functionality to this extension:
+```
+javascript:void((() => {document.title = document.title.endsWith(" - " + window.location.href) ? document.title : document.title + " - " + window.location.href;setTimeout(() => {document.title = document.title.endsWith(" - " + window.location.href) ? document.title.slice(0, -(" - ".concat(window.location.href).length)) : document.title;}, 10000)})())
+```
+The code has no line breaks because bookmarklets must be one liners.\
+For more info, see [Bookmarklet](https://en.wikipedia.org/wiki/Bookmarklet) on Wikipedia.
+
+Like this extension, the above bookmarklet adds the URL to the current tab's title when clicked and removes it after 10 seconds. However, the bookmarklet cannot be used with a shortcut (unless you use another extension that lets you assign a shortcut to a bookmark).
+
 ## Why another URL in title extension?
 If there are so many alternatives, why did I create this extension?\
 These were my reasons, in order of importance:
