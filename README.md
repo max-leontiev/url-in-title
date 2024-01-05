@@ -9,8 +9,9 @@ This shortcut can be customized - see https://support.mozilla.org/en-US/kb/manag
 
 After 1 second, the URL is will be automatically removed from the tab's title.
 
-I designed this extension for use with the [AutoType feature](https://keepass.info/help/base/autotype.html) of the KeePass password manager. Specifically, how I use this extension is:
-1. On a page where I need to enter credentials, I use the `Ctrl` + `Alt` + `S` to add the URL to the title. This lets KeePass match the active window with the corresponding credentials in the database.
+I designed this extension for use with the [AutoType feature](https://keepass.info/help/base/autotype.html) of the KeePass password manager.\
+Specifically, how I use this extension is:
+1. On a page where I need to enter credentials, I use `Ctrl` + `Alt` + `S` (the extension shortcut) to add the URL to the title. This lets KeePass match the active window with the corresponding credentials in the database.
 
 2. I press `Ctrl` + `Alt` + `A` (the default KeePass Global Auto-Type hotkey) to enter my credentials. 
 
@@ -38,7 +39,7 @@ Out of all of the alternative extensions above, I would be most inclined to use 
 If there are so many alternatives, why does this extension exist?\
 These were my reasons, in order of importance:
 
-1. Other URL in title extensions ask for excessive permissions - namely, host permissions for `<all_urls>` (which shows up in Firefox as *Access your data for all websites*). I do not like this, even though I can look at the source code and see that nothing untoward is going on. This also goes against the best practices layed out by Mozilla in their [Request the Right Permissions](https://extensionworkshop.com/documentation/develop/request-the-right-permissions/) article. See [Permissions](#permissions) for a more thorough discussion.
+1. Other URL in title extensions ask for excessive permissions - namely, host permissions for `<all_urls>` (which shows up in Firefox as *Access your data for all websites*). I do not like this, even though I can look at the source code and see that nothing untoward is going on. This also goes against the best practices layed out by Mozilla in their [Request the Right Permissions](https://extensionworkshop.com/documentation/develop/request-the-right-permissions/) article. See the [Permissions](#permissions) section for a more thorough discussion.
 
 2. Other URL in title extensions add the URL to every tab's title, and leave it there indefinitely. This is unnecessary and (in my opinion) a bit annoying.
 
