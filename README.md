@@ -59,6 +59,7 @@ These were my reasons, in order of importance:
 4. I wanted to start making my own browser extensions, and this project was an easy starting point.
 
 ## License
+Material Design icons are property of Google, released under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
 This project is licensed under the GPLv3 License - see the [LICENSE.txt](LICENSE.txt) file for details.\
 Copyright © 2024 Max Leontiev
