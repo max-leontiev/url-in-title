@@ -16,15 +16,18 @@
   "action": {
     "default_icon": "icons/icon.svg",
     "default_title": "Add URL to title",
-    "theme_icons": [{
-      "light": "icons/iconwhite.svg",
-      "dark": "icons/icon.svg",
-      "size": 16
-    }, {
-      "light": "icons/iconwhite.svg",
-      "dark": "icons/icon.svg",
-      "size": 32
-    }]
+    "theme_icons": [
+      {
+        "light": "icons/iconwhite.svg",
+        "dark": "icons/icon.svg",
+        "size": 16
+      },
+      {
+        "light": "icons/iconwhite.svg",
+        "dark": "icons/icon.svg",
+        "size": 32
+      }
+    ]
   },
   "background": {
     "scripts": ["url-in-title.js"]
@@ -37,4 +40,3 @@
     }
   }
 }
-
