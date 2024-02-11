@@ -2,6 +2,20 @@
 
 A simple extension which lets you add the URL of the active tab to its title temporarily. The URL is removed from the title after 10 seconds.
 
+## Installation
+
+This extension is not yet available on [Mozilla's add-on browser](https://addons.mozilla.org/en-CA/firefox/). 
+
+To run a temporary installation for development/testing purposes, follow [this guide](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/) by Mozilla (copied here for convenience):
+- clone this repo
+- open Firefox
+- enter `about:debugging` in the URL bar
+- click "This Firefox"
+- click "Load Temporary Add-on"
+- open the extension's directory and select any file inside the extension
+
+The extension will be installed, and it will remain installed until you remove it or restart Firefox.
+
 ## Usage
 
 To add the URL to the active tab's title, you can either:
